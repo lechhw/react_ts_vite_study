@@ -1,23 +1,17 @@
-// import React from 'react';
-import { useEffect } from 'react';
-import './App.css';
-import Gnb from './components/Gnb';
-import { useUserState } from './context/UserContext';
+import { useLocation } from 'react-router-dom';
+import styles from './App.module.scss';
 import Router from './router/Router';
+import GnbHeader from './layout/GnbHeader';
 
 function App() {
-    const state = useUserState();
-    // const state = useContext(UserContext);
-    // if (!state) return;
-
-    useEffect(() => {
-        console.log('$$$$$$', state);
-    }, [state]);
+    const { pathname } = useLocation();
 
     return (
-        <div>
-            <Gnb />
-            <Router />
+        <div className={styles.app}>
+            {pathname.indexOf(`${'login' || 'error'}`) < 0 && <GnbHeader />}
+            <div className={styles.contents}>
+                <Router />
+            </div>
         </div>
     );
 }
