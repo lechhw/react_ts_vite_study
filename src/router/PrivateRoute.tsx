@@ -8,9 +8,11 @@ interface OwnProps {
 }
 
 const PrivateRoute = ({ authentication }: OwnProps) => {
-    const { userData } = useUserState();
-    const isLogin = userData ? true : false;
-
+    const { isLogin } = useUserState();
+    // console.log('MMMM', userData);
+    // const isLogin = userData ? true : false;
+    // const isLogin = localStorage.getItem('userData') ? true : false;
+    // console.log(userData);
     if (authentication) {
         // 인증 완료 인 경우만 접근 가능
         return !isLogin ? <Navigate to={'/login'} /> : <Outlet />;

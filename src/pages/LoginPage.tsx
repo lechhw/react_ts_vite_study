@@ -12,7 +12,7 @@ const LoginPage = () => {
 
     const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        const userData = { userId: form.id, token: '1234', access: '0' };
+        const userData = { userId: form.id, token: '1234', access: '1' };
         handleLogin(userData);
     };
 

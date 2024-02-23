@@ -1,18 +1,20 @@
-import { useLocation } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import styles from './App.module.scss';
-import Router from './router/Router';
 import GnbHeader from './layout/GnbHeader';
+import { UserProvider } from './context/UserContext';
 
 function App() {
     const { pathname } = useLocation();
 
     return (
-        <div className={styles.app}>
-            {pathname.indexOf(`${'login' || 'error'}`) < 0 && <GnbHeader />}
-            <div className={styles.contents}>
-                <Router />
+        <UserProvider>
+            <div className={styles.app}>
+                {pathname.indexOf(`${'login' || 'error'}`) < 0 && <GnbHeader />}
+                <div className={styles.contents}>
+                    <Outlet />
+                </div>
             </div>
-        </div>
+        </UserProvider>
     );
 }
 
