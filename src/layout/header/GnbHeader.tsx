@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import styles from './GnbHeader.module.scss';
-import { useUserState } from '../context/UserContext';
+import { useUserState } from '../../context/UserContext';
 
 const GnbHeader = () => {
     const navigate = useNavigate();

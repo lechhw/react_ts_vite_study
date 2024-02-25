@@ -1,6 +1,6 @@
 import { Outlet, useLocation } from 'react-router-dom';
 import styles from './App.module.scss';
-import GnbHeader from './layout/GnbHeader';
+import GnbHeader from './layout/header/GnbHeader';
 import { UserProvider } from './context/UserContext';
 
 function App() {
