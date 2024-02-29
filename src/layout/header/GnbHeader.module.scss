@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30px;
+    padding: 10px;
 
     .linkWrap {
         display: flex;
@@ -13,6 +13,8 @@
 
     .btnWrap {
         position: absolute;
+        display: flex;
+        gap: 10px;
         right: 30px;
     }
 }
